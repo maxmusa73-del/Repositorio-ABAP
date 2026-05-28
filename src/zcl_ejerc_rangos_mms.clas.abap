@@ -27,6 +27,10 @@ DATA lr_compannia type RANGE OF /dmo/carrier_id.
     APPEND value #( sign = 'I' option = 'EQ' low = 'AA' ) to lr_compannia.
     APPEND value #( sign = 'I' option = 'EQ' low = 'SQ' ) to lr_compannia.
 
+*    lr_compannia =  value #( ( sign = 'I' option = 'EQ' low = 'LH' )
+*                             ( sign = 'I' option = 'EQ' low = 'AA' )
+*                             ( sign = 'I' option = 'EQ' low = 'SQ' ) ).
+
 " punto 2
 DATA lr_fechas type RANGE OF /dmo/flight_date.
 *out->write( lr_fechas ).
@@ -59,10 +63,10 @@ DATA lr_precio type RANGE OF /dmo/flight_price.
 
  SELECT FROM /dmo/flight
     FIELDS carrier_id, connection_id, flight_date, price
-    WHERE carrier_id  IN @lr_compannia
-        AND carrier_id  IN @lr_exclusion
-        AND flight_date IN @lr_fechas
-        INTO TABLE @DATA(flights).
+    WHERE  carrier_id  IN @lr_compannia
+      AND carrier_id  IN @lr_exclusion
+      AND flight_date IN @lr_fechas
+      INTO TABLE @DATA(flights).
 
 
 
