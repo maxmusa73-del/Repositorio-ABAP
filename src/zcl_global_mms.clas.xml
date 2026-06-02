@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_VUELO_MMS</CLSNAME>
+    <CLSNAME>ZCL_GLOBAL_MMS</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Ejemplos varios</DESCRIPT>
+    <DESCRIPT>clase fabrica</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

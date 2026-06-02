@@ -5,7 +5,7 @@ CLASS zcl_poo_mms DEFINITION
 
   PUBLIC SECTION.
 
-  DATA lv_nombre type string.
+  DATA lv_nombre type string .
   METHODS: ladrar returning value(rv_accion) TYPE string. " metodo / funcion
   METHODS: lanzar_pelota RETURNING VALUE(rv_accion) type string. " metodo / funcion
 

@@ -27,6 +27,7 @@ CLASS zcl_alumnos_mms IMPLEMENTATION.
     DATA lv_id      TYPE i.
 *
 *    " Lista con los 18 alumnos de clase
+
     DATA(lt_nombres) = VALUE string_table(
       ( |Alba Gómez, Sergio| )
       ( |Anangono Tutasig, Karen Denisse| )
@@ -63,7 +64,7 @@ CLASS zcl_alumnos_mms IMPLEMENTATION.
 *      " insertar
 *      INSERT ztb_alumnos FROM @( VALUE #( id     = lv_id
 *                                          nombre = lv_nombre ) ).    " graba la fila . la @ antes del valor marca que es una variable de ABAP que entra en una
-*                                                                     " sentencia SQL ( esto es obligatorio en la sintaxi moderna )
+*                                                                     " sentencia SQL ( esto es obligatorio en la sintaxis moderna )
 *    ENDLOOP.
 *
 *    out->write( |--- PARTE 1a: TABLA DE BASE DE DATOS (ztb_alumnos) ---| ).
@@ -77,7 +78,7 @@ CLASS zcl_alumnos_mms IMPLEMENTATION.
        "================================================================
 *    " PARTE 3: Subida individual de registros
 *    "================================================================
-    DATA lv_nuevo_nombre type string value 'Juan'.
+    DATA lv_nuevo_nombre type string value 'Juan'. " para cada valor nuevo tenemos que almacenarlo aqui
 
 
      SELECT COUNT(*) FROM ztb_alumnos INTO @DATA(lv_count2).
@@ -124,6 +125,11 @@ CLASS zcl_alumnos_mms IMPLEMENTATION.
     out->write( |--- PARTE 2: EXTRACCIÓN ALEATORIA ---| ).
     out->write( |Número aleatorio generado (1..{ lv_total }): { lv_rand_id }| ).
     out->write( |Alumno seleccionado: { ls_alumno-id } - { ls_alumno-nombre }| ).
+
+
+*    DATA lv_nuevo_nombre type string value 'Juan'.
+
+
 
 
   ENDMETHOD.
