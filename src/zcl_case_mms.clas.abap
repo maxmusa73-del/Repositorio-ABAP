@@ -55,7 +55,7 @@ if lv_nombre = 'Daniel'.
 
   else.
 
-  out->write( 'no es ningún niño que se llame Daniel').
+  out->write( 'no es ningún niño que se llame Daniel' ).
 
   endif.
   ENDMETHOD.
