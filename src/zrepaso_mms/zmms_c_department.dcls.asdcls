@@ -1,0 +1,11 @@
+@EndUserText.label: 'Consulta departamento (control acceso)'
+@MappingRole: true
+define role ZMMS_C_DEPARTMENT {
+    grant
+        select
+            on
+                ZMMS_C_DEPARTMENT
+                    where
+                        inheriting conditions from entity ZMMS_R_DEPARTMENT;
+                        
+}

@@ -1,0 +1,11 @@
+@EndUserText.label: 'Consulta de empleado (control de acceso)'
+@MappingRole: true
+define role ZMMS_C_EMPLOYEE {
+    grant 
+        select
+            on
+                ZMMS_C_EMPLOYEE
+                    where
+                    inheriting conditions from entity ZMMS_R_EMPLOYEE; //utiliza los mismos controles de autorización que la entidad ZMMS_R_EMPLOYEE
+                   
+}
